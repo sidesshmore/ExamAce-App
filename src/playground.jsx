@@ -67,7 +67,7 @@ const AIChatInterface = () => {
   };
 
   return (
-    <div className="flex h-[90vh]">
+    <div className="flex h-[80vh] w-[68%] mt-[70px] ml-[138px]">
       {/* Left Pane - Question Input */}
       <div className="w-screen p-2 border-r bg-gray-50">
         <div className="bg-white shadow-md rounded-lg h-full p-4">
