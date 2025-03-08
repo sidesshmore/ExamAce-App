@@ -74,7 +74,7 @@ const BookBrowsingApp = () => {
   const booksForSubject = BOOKS[selectedSubject] || [];
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container w-[80%] mx-auto p-6 ml-[20%]">
       <h1 className="text-3xl font-bold mb-6">ExamAce Library</h1>
 
       {/* Subject Dropdown */}

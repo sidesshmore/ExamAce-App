@@ -49,6 +49,7 @@ const SidebarApp = () => {
       </nav> */}
       <div className="flex relative min-h-screen">
         {/* Hamburger Menu Button */}
+
         <button
           onClick={toggleSidebar}
           className="fixed top-4 left-4 z-50 bg-white p-2 rounded-md shadow-md hover:bg-gray-100 transition-colors  "
@@ -58,9 +59,11 @@ const SidebarApp = () => {
 
         {/* Sidebar */}
         <div
-          className={`w-64 bg-white border-r h-screen fixed left-0 top-0 p-4 shadow-lg  duration-300  ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`
+            w-64 bg-white border-r h-screen fixed left-0 top-0 p-4 shadow-lg 
+            transition-transform duration-300 ease-in-out
+            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+          `}
         >
           {/* <div className="mb-10 text-center">
             <h2 className="text-xl font-bold text-gray-800 pt-12">
@@ -118,8 +121,8 @@ const SidebarApp = () => {
         {/* Main Content Area */}
         <div
           className={`
-          w-full min-h-screen transition-all duration-300 ease-in-out
-          ${isSidebarOpen ? "ml-[20%] translate-0" : "ml-0"}
+          w-[90%] min-h-screen transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? "ml-[12%] " : "ml-0"} 
         `}
         >
           <Routes>
