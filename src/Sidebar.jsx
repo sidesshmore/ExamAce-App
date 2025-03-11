@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import { Home, MessageCircle, BookOpen, Menu, X } from 'lucide-react';
-import AIChatInterface from './playground'
-import BookBrowsingApp from './Subject'
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import { Home, MessageCircle, BookOpen, Menu, X } from "lucide-react";
+import AIChatInterface from "./playground";
+import BookBrowsingApp from "./Subject";
+import NavToHome from "./NavToHome";
 // import SidebarApp from './Sidebar'
 
 // Individual Page Components
@@ -29,7 +35,7 @@ const BCPage = () => (
 
 // Main App Component with Sidebar
 const SidebarApp = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -37,61 +43,74 @@ const SidebarApp = () => {
 
   return (
     <Router>
-      <div className="flex">
+      {/* <NavToHome></NavToHome> */}
+      {/* <nav className="left-[100%]">
+        <NavToHome></NavToHome>
+      </nav> */}
+      <div className="flex relative min-h-screen">
         {/* Hamburger Menu Button */}
-        <button 
-          onClick={toggleSidebar} 
-          className="fixed top-4 left-4 z-50 bg-white p-2 rounded-md shadow-md hover:bg-gray-100 transition-colors "
+
+        <button
+          onClick={toggleSidebar}
+          className="fixed top-4 left-4 z-50 bg-white p-2 rounded-md shadow-md hover:bg-gray-100 transition-colors  "
         >
-          {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+          {isSidebarOpen ? <X size={12} /> : <Menu size={14} />}
         </button>
 
         {/* Sidebar */}
-        <div 
+        <div
           className={`
             w-64 bg-white border-r h-screen fixed left-0 top-0 p-4 shadow-lg 
             transition-transform duration-300 ease-in-out
-            ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+            ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
           `}
         >
-          <div className="mb-10 text-center">
-            <h2 className="text-xl font-bold text-gray-800 pt-12">Navigation</h2>
-          </div>
-          
-          <nav className="space-y-2">
-            <NavLink 
-              to="/" 
+          {/* <div className="mb-10 text-center">
+            <h2 className="text-xl font-bold text-gray-800 pt-12">
+              Navigation
+            </h2>
+          </div> */}
+          <br />
+          <nav className="space-y-2 mt-[30px]">
+            <NavLink
+              to="/"
               className={({ isActive }) => `
                 flex items-center p-3 rounded-lg transition-colors duration-200
-                ${isActive 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-100 text-gray-700'}
+                ${
+                  isActive
+                    ? "bg-blue-100 text-blue-700"
+                    : "hover:bg-gray-100 text-gray-700"
+                }
               `}
             >
               <Home className="mr-3" size={20} />
               Chat Window
             </NavLink>
-            
-            <NavLink 
-              to="/subjects" 
+
+            <NavLink
+              to="/subjects"
               className={({ isActive }) => `
                 flex items-center p-3 rounded-lg transition-colors duration-200
-                ${isActive 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-100 text-gray-700'}
+                ${
+                  isActive
+                    ? "bg-blue-100 text-blue-700"
+                    : "hover:bg-gray-100 text-gray-700"
+                }
               `}
             >
               <BookOpen className="mr-3" size={20} />
               Subject Selection
             </NavLink>
-            
-            <NavLink 
-              to="/bc" 
+
+            <NavLink
+              to="/bc"
               className={({ isActive }) => `
                 flex items-center p-3 rounded-lg transition-colors duration-200
-                ${isActive 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-100 text-gray-700'}
+                ${
+                  isActive
+                    ? "bg-blue-100 text-blue-700"
+                    : "hover:bg-gray-100 text-gray-700"
+                }
               `}
             >
               <MessageCircle className="mr-3" size={20} />
@@ -99,12 +118,13 @@ const SidebarApp = () => {
             </NavLink>
           </nav>
         </div>
-        
         {/* Main Content Area */}
-        <div className={`
-          w-full transition-all duration-300 ease-in-out
-          ${isSidebarOpen ? 'ml-64' : 'ml-0'}
-        `}>
+        <div
+          className={`
+          w-[90%] min-h-screen transition-all duration-300 ease-in-out
+          ${isSidebarOpen ? "ml-[12%] " : "ml-0"} 
+        `}
+        >
           <Routes>
             <Route path="/" element={<AIChatInterface />} />
             <Route path="/subjects" element={<BookBrowsingApp />} />
