@@ -68,7 +68,7 @@ const AIChatInterface = () => {
 
   return (
     <>
-      <h1 className="text-3xl ml-3 font-bold mb-6"> Ask Your Questions</h1>
+      <h1 className="text-3xl ml-3 font-bold mb-6"> Ask Your Questions 🧐</h1>
       <div className="flex h-[80vh] w-[68%] ml-[20%]">
         {/* Left Pane - Question Input */}
         <div className="w-screen p-2 border-r bg-gray-50">

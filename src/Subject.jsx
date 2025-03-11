@@ -75,7 +75,7 @@ const BookBrowsingApp = () => {
 
   return (
     <div className="container w-[80%] mx-auto p-6 ml-[20%]">
-      <h1 className="text-3xl font-bold mb-6">ExamAce Library</h1>
+      <h1 className="text-3xl font-bold mb-6">ExamAce Library 📚</h1>
 
       {/* Subject Dropdown */}
       <div className="mb-6">
