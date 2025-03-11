@@ -6,14 +6,12 @@ import BookBrowsingApp from "./Subject";
 import SidebarApp from "./Sidebar";
 import { Sidebar } from "lucide-react";
 import BookNav from "./BookNav";
-import NavToHome from "./NavToHome";
 
 function App() {
   return (
     <>
       {/* <AIChatInterface /> */}
       {/* <BookBrowsingApp /> */}
-
       <SidebarApp />
       {/* <BookNav /> */}
     </>
