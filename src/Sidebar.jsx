@@ -6,8 +6,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import { Home, BookOpen, MessageCircle, MoveLeft, X, Menu } from "lucide-react";
-import AIChatInterface from "./playground"; // Replace with your actual component
-import BookBrowsingApp from "./Subject.jsx"; // Replace with your actual component
+import AIChatInterface from "./playground";
+import BookBrowsingApp from "./Subject.jsx";
 
 // Login Modal Component
 const LoginModal = ({ isOpen, onClose }) => {
@@ -23,11 +23,11 @@ const LoginModal = ({ isOpen, onClose }) => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
             >
-              Username
+              Email
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              id="Email"
               type="text"
               placeholder="Username"
             />
