@@ -131,4 +131,3 @@ flutter run
 
 ---
 
-Want help adding project badges, demo video section, or deploying a landing page for it?
